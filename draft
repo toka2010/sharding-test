@@ -1,0 +1,10 @@
+
+
+docker compose -f docker-compose.yml down
+
+docker rmi test-api-image  
+
+docker compose -f docker-compose.yml up -d 
+
+
+---------------------------------------------------------------------------------------------------------------------------------

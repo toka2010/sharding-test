@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    restart: always
+
+    container_name: test-api
+
+    image: test-api-image
+
+    build:
+      context: ./
+      target: development
+
+    command: npm run start:dev
+
+    volumes:
+      - ./:/app
+      - /app/node_modules
+
+    networks:
+      - sharding
+
+    ports:
+      - '1996:1996'
+
+networks:
+  sharding: 
+      name: sharding
+      external: true
+
+
